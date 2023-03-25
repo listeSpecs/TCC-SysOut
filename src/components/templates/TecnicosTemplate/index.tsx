@@ -1,8 +1,8 @@
 import React from 'react';
-import Menu from '../../molecules/Menu';
-import Header from '../../organisms/Header';
+import Menu from '../../Menu';
+import Header from '../../Header';
 import { Wrapper } from '../../../styles/base';
-import MenuTecnicos from '../../molecules/MenuTecnicos';
+import MenuGenerico from '../../MenuGenerico';
 
 const TecnicosTemplate = (props: any) => {
   return (
@@ -10,7 +10,7 @@ const TecnicosTemplate = (props: any) => {
       <Header title="Técnicos" />
 
       <Wrapper>
-        <MenuTecnicos />
+        <MenuGenerico />
       </Wrapper>
     </>
   );

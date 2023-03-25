@@ -6,23 +6,29 @@ export const colors = {
   gray: '#DEDEDD',
 
   background: '#F0F4F7',
-  primary: '#1A3DB8',
+  primary: '#ADADAD',
+  secondary: '#A5887',
+  utilitary: '#3D454A',
+  danger: '#F56E64',
+  success: '#62A765',
 };
 
 export const theme = createTheme({
   palette: {
     primary: {
-      light: '#57F4D0',
-      main: '#25C8A2',
+      light: '#ADADAD',
+      main: '#ADADAD',
     },
     secondary: {
-      light: '#0066ff',
-      main: '#0044ff',
-      contrastText: '#ffcc00',
+      light: '#A58877',
+      main: '#A58877',
     },
     common: {
       white: '#FFFFFF',
       black: '#000000',
+    },
+    warning: {
+      main: '#F56E64',
     },
     contrastThreshold: 3,
     tonalOffset: 0.2,

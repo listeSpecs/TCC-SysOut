@@ -8,8 +8,8 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import Header from "../../../../organisms/Header";
-import { Label, Row, Spacing } from "../../../../../styles/base";
+import Header from "../../../../Header";
+import { Label, Row, Spacing, Wrapper } from "../../../../../styles/base";
 import { colors } from "../../../../../global/styles/colors";
 
 interface Tec {
@@ -38,7 +38,7 @@ const Consultar = (props: any) => {
 
   useEffect(() => {
     api.get("/usuarios").then((resp) => setTecnicos(resp.data));
-  }, []);
+  }, [tecnicoSelected]);
 
   if (!tecnicos.length) {
     return null;
@@ -46,49 +46,86 @@ const Consultar = (props: any) => {
 
   const handleDelete = async (id: string) => {
     try {
-      await api.delete(`/usuarios/${id}`)
+      await api.delete(`/usuarios/${id}`);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+    setTecnicoSelected(tecnicoValues);
+  };
 
   if (tecnicoSelected.id) {
-    console.log(tecnicoSelected);
     return (
       <>
         <Header title="Consultar Técnicos" />
 
-        <Spacing size={14} />
+        <Wrapper>
+          <Spacing size={8} />
+          <Button
+            variant="contained"
+            color="secondary"
+            size="large"
+            onClick={() => setTecnicoSelected(tecnicoValues)}
+          >
+            Voltar
+          </Button>
 
-        <div>
-          <Label bold size={24} color={colors.black}>
-            {tecnicoSelected.nome}
-          </Label>
-        </div>
-        <div>
-          <Label color={colors.black}>CPF:</Label>
-          <Label color={colors.black}>{tecnicoSelected.cpf}</Label>
-        </div>
-        <div>
-          <Label color={colors.black}>RG:</Label>
-          <Label color={colors.black}>{tecnicoSelected.rg}</Label>
-        </div>
-        <div>
-          <Label color={colors.black}>Telefone:</Label>
-          <Label color={colors.black}>{tecnicoSelected.telefone}</Label>
-        </div>
-        <div>
-          <Label color={colors.black}>Email:</Label>
-          <Label color={colors.black}>{tecnicoSelected.email}</Label>
-        </div>
+          <Row justify="center" style={{ alignItems: "center" }}>
+            <div>
+              <div>
+                <Label bold size={24} color={colors.black}>
+                  {tecnicoSelected.nome}
+                </Label>
+              </div>
 
-        <Button
-          variant="contained"
-          size="large"
-          onClick={() => handleDelete(tecnicoSelected.id.toString())}
-        >
-          Detalhes
-        </Button>
+              <Spacing size={4} />
+
+              <div>
+                <Label bold color={colors.black}>
+                  CPF:
+                </Label>{" "}
+                <Label color={colors.black}>{tecnicoSelected.cpf}</Label>
+              </div>
+
+              <Spacing size={4} />
+
+              <div>
+                <Label bold color={colors.black}>
+                  RG:
+                </Label>{" "}
+                <Label color={colors.black}>{tecnicoSelected.rg}</Label>
+              </div>
+
+              <Spacing size={4} />
+
+              <div>
+                <Label bold color={colors.black}>
+                  Telefone:
+                </Label>{" "}
+                <Label color={colors.black}>{tecnicoSelected.telefone}</Label>
+              </div>
+
+              <Spacing size={4} />
+
+              <div>
+                <Label bold color={colors.black}>
+                  Email:
+                </Label>{" "}
+                <Label color={colors.black}>{tecnicoSelected.email}</Label>
+              </div>
+
+              <Spacing size={8} />
+
+              <Button
+                variant="contained"
+                color="warning"
+                size="large"
+                onClick={() => handleDelete(tecnicoSelected.id.toString())}
+              >
+                Deletar
+              </Button>
+            </div>
+          </Row>
+        </Wrapper>
       </>
     );
   }

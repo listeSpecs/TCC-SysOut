@@ -1,7 +1,7 @@
 import React from "react";
 import { colors } from "../../../global/styles/colors";
 import { Label, Spacing, Wrapper } from "../../../styles/base";
-import LoginForm from "../../molecules/LoginForm";
+import LoginForm from "../../LoginForm";
 
 const LoginTemplate = (props: any) => {
   console.log(props);
@@ -20,7 +20,7 @@ const LoginTemplate = (props: any) => {
 
         <Spacing size={8} />
 
-        <LoginForm handleLogin={props.handleLogin} />
+        <LoginForm handleLogin={props.handleLogin} setValues={props.setValues} values={props.values} />
       </div>
     </Wrapper>
   );

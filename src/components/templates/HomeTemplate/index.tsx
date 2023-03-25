@@ -1,6 +1,6 @@
 import React from 'react';
-import Menu from '../../molecules/Menu';
-import Header from '../../organisms/Header';
+import Menu from '../../Menu';
+import Header from '../../Header';
 import { Wrapper } from '../../../styles/base';
 
 const HomeTemplate = () => {
