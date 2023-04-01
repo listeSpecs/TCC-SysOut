@@ -21,31 +21,31 @@ const MenuParametros = () => {
           icon={
             <PaidIcon sx={{ fontSize: 60 }} htmlColor={colors.primary} />
           }
-          onClick={() => navigate("/parametros")}
+          onClick={() => navigate("servicos")}
         />
         <MenuCard
           label="Situações"
           icon={
             <CheckCircleIcon sx={{ fontSize: 60 }} htmlColor={colors.primary} />
           }
-          onClick={() => navigate("/parametros")}
+          onClick={() => navigate("situacoes")}
         />
         <MenuCard
           label="Categorias"
           icon={
             <Category sx={{ fontSize: 60 }} htmlColor={colors.primary} />
           }
-          onClick={() => navigate("/parametros")}
+          onClick={() => navigate("categorias")}
         />
         <MenuCard
           label="Acessórios"
           icon={<Build sx={{ fontSize: 60 }} htmlColor={colors.primary} />}
-          onClick={() => navigate("/parametros")}
+          onClick={() => navigate("acessorios")}
         />
         <MenuCard
           label="Informações da Empresa"
           icon={<Apartment sx={{ fontSize: 60 }} htmlColor={colors.primary} />}
-          onClick={() => navigate("/parametros")}
+          onClick={() => navigate("empresa")}
         />
       </MenuWrapper>
     </Row>

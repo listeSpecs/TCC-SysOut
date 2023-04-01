@@ -7,12 +7,14 @@ interface Props {
   background?: string;
   color?: string;
   bold?: boolean;
+  block?: boolean;
 }
 
 export const Label = styled.span<Props>`
   font-size: ${({ size }) => (size ? `${size}px` : "16px")};
   color: ${({ color }) => color || colors.gray};
   font-weight: ${({ bold }) => (bold ? 450 : 300)};
+  display: ${({ block }) => (block ? "block" : "inline")};
 `;
 
 export const Row = styled.div<Props>`
@@ -29,6 +31,11 @@ export const Column = styled.div<Props>`
   justify-content: ${({ justify }) => justify || "flex-start"};
   align-items: center;
   background: ${({ background }) => background || "transparent"};
+`;
+
+export const FormWrapper = styled.div`
+  min-width: 580px;
+  max-width: 1080px;
 `;
 
 export const Wrapper = styled.div`

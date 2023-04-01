@@ -4,7 +4,7 @@ import { Wrapper } from "../../../../../styles/base";
 import MenuGenerico from "../../../../MenuGenerico";
 import TecnicosForm from "../../../../TecnicosForm";
 
-const Cadastrar = (props: any) => {
+const CadastrarTecnico = (props: any) => {
   return (
     <>
       <Header title="Cadastrar Técnico" />
@@ -16,4 +16,4 @@ const Cadastrar = (props: any) => {
   );
 };
 
-export default Cadastrar;
+export default CadastrarTecnico;
