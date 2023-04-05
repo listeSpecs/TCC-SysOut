@@ -193,10 +193,10 @@ const TecnicosForm = (props: any) => {
         <Spacing size={8} />
 
         <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">Admin</InputLabel>
+          <InputLabel id="admin">Admin</InputLabel>
           <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
+            labelId="admin"
+            id="select_admin"
             label="Admin"
             onChange={({ target }) =>
               setValues({
