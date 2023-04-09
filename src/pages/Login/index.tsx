@@ -18,9 +18,10 @@ const Login = () => {
   const handleLogin = async () => {
     try {
       const resp = await api.post("/login", values);
-      console.log(resp.data);
       window.localStorage.setItem('token', resp.data.token);
       window.localStorage.setItem('user', resp.data.username);
+      window.localStorage.setItem('id', resp.data.id);
+      window.localStorage.setItem('idEmpresa', resp.data)
     } catch (error: any) {
       console.log(error);
       return toast.error("Email ou senha inválidos!");
